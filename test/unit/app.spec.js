@@ -21,33 +21,33 @@ describe('app', function () {
             });
         });
 
-        //New Tests
-        it('should return flase, date is a string', function () {
-            expect(app.assignToSwimmingCourse('Mario', 'yolo')).toEqual({
-                name: 'Mario', age: 5, course: 'kids'
+
+        it('return false date STRING', function () {
+            expect(app.assignToSwimmingCourse('Jack', 'error')).toEqual({
+                name: 'Jack', age: 20, course: 'adults'
             });
         });
-        it('should return age value 12', function () {
-            expect(app.assignToSwimmingCourse('Mario', '10/06/2010')).toEqual({
-                name: 'Mario', age: 12, course: 'kids'
+        it('return age 20', function () {
+            expect(app.assignToSwimmingCourse('Jack', '10/06/2010')).toEqual({
+                name: 'Jack', age: 20, course: 'teens'
             });
         });
-        it('should return adults as course value', function () {
-            expect(app.assignToSwimmingCourse('Mario', '10/06/2010')).toEqual({
-                name: 'Mario', age: 5, course: 'adults'
+        it('return adults', function () {
+            expect(app.assignToSwimmingCourse('John', '07/10/2001')).toEqual({
+                name: 'Mario', age: 14, course: 'adults'
             });
         });
     });
 
     describe('calculateArea', function () {
-        it('a is greater than b, all params are proper', function () {
-          expect(answer.calculateArea(11, 10, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 11, message : 'Niepowodzenie' });
+        it('a, b, c are proper', function () {
+          expect(answer.calculateArea(15, 10, 0, 'good', 'bad')).toEqual({ area : 11, message : 'bad' });
         });
-        it('insert 0 as first and third value', function () {
-           expect(answer.calculateArea(0, 11, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 10, message : 'Sukces' });
+        it('insert 0 as first and last value', function () {
+           expect(answer.calculateArea(0, 10, 0, 'good', 'bad')).toEqual({ area : 10, message : 'good' });
         });
-        it('should return Sukces message, all params are proper', function () {
-           expect(answer.calculateArea(25, 10, 1, 'Sukces', 'Niepowodzenie')).toEqual({ area : 20, message : 'Sukces' });
+        it('return good', function () {
+           expect(answer.calculateArea(15, 10, 5, 'good', 'bad')).toEqual({ area : 20, message : 'good' });
         });
     });    
 

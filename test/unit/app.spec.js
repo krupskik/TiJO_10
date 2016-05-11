@@ -24,38 +24,36 @@ describe('app', function () {
         });
 
 
-        //New Tests
-        it('should return flase, date is a string', function () {
-            expect(app.assignToSwimmingCourse('Mario', 'yolo')).toEqual({
+
+        //wrong return age value was 12 proper is 5
+        it('should return age value 12', function () {
+            expect(app.assignToSwimmingCourse('Mario', '10/06/2010')).toEqual({
                 name: 'Mario', age: 5, course: 'kids'
             });
         });
-
-        it('should return age value 12', function () {
-            expect(app.assignToSwimmingCourse('Mario', '10/06/2010')).toEqual({
-                name: 'Mario', age: 12, course: 'kids'
-            });
-        });
-
+        //wrong reurn course was 'adult' proper is 'kids'
         it('should return adults as course value', function () {
             expect(app.assignToSwimmingCourse('Mario', '10/06/2010')).toEqual({
-                name: 'Mario', age: 5, course: 'adults'
+                name: 'Mario', age: 5, course: 'kids'
             });
         });
     });
 
 
     describe('calculateArea', function () {
+        //wrong return message was 'Niepowodzenie'
         it('a is greater than b, all params are proper', function () {
-            expect(answer.calculateArea(11, 10, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 11, message : 'Niepowodzenie' });
+            expect(answer.calculateArea(11, 10, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 11, message : 'Sukces' });
         });
 
+        //wrong return area value was 10
         it('insert 0 as first and third value', function () {
-            expect(answer.calculateArea(0, 11, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 10, message : 'Sukces' });
+            expect(answer.calculateArea(0, 11, 0, 'Sukces', 'Niepowodzenie')).toEqual({ area : 11, message : 'Sukces' });
         });
 
+        // wrong return value area was 20
         it('should return Sukces message, all params are proper', function () {
-            expect(answer.calculateArea(25, 10, 1, 'Sukces', 'Niepowodzenie')).toEqual({ area : 20, message : 'Sukces' });
+            expect(answer.calculateArea(25, 10, 1, 'Sukces', 'Niepowodzenie')).toEqual({ area : 15, message : 'Sukces' });
         });
     });
 });
